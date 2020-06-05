@@ -1,0 +1,89 @@
+.el-header {
+	padding: 0;
+}
+.el-form-item {
+    min-height: 40px;
+    line-height: 40px;
+    margin-bottom: 8px;
+    .el-radio-button {
+        .el-radio-button__inner:hover {
+            color: #7D7D7D;
+        }
+        &.is-active {
+            .el-radio-button__inner:hover {
+                color: #FFFFFF;
+            }
+        }
+	}
+	.el-checkbox-button--mini {
+        .el-checkbox-button__inner {
+            padding: 5px 10px; 
+        }
+        &.is-focus {
+            .el-checkbox-button__inner {
+                border-color: #DCDFE6;
+            }
+        }
+    }
+    .el-radio-button--mini {
+        .el-radio-button__inner {
+            padding: 5px 10px; 
+        }
+        &.is-focus {
+            .el-radio-button__inner {
+                border-color: #DCDFE6;
+            }
+        }
+    }
+    .el-radio__input.is-checked .el-radio__inner {
+        border-color: #FE8816;
+        background: #FE8816;
+    }
+    .el-checkbox-button, .el-radio-button {
+        img {
+            width: 16px;
+            height: 16px;
+        }
+    }
+    .el-color-picker {
+        top: 5px;
+    }
+    .el-input-number--small, .el-select--small {
+        width: 100px;
+    }
+	.el-input-number__decrease:hover, .el-input-number__increase:hover, .el-radio__input.is-checked+.el-radio__label {
+		color: #FE8816;
+	}
+	.el-input-number__decrease:hover:not(.is-disabled)~.el-input .el-input__inner:not(.is-disabled),
+	.el-input-number__increase:hover:not(.is-disabled)~.el-input .el-input__inner:not(.is-disabled) {
+		border-color: #DCDFE6;
+	}
+}
+.el-input__inner, .el-textarea__inner {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.el-input__inner:hover,
+.el-textarea__inner:hover,
+.el-select:hover .el-input__inner {
+	border-color: #DCDFE6;
+}
+.el-input__inner:focus,
+.el-textarea__inner:focus,
+.el-select .el-input.is-focus .el-input__inner {
+	border-color: #FE8816;
+}
+.el-input.is-disabled .el-input__inner {
+    background: #FFFFFF;
+    border-color: #DCDFE6;
+    color: #606266;
+    cursor: default;
+}
+.el-button:focus, .el-button:hover {
+    color: #FE8816;
+    border-color: #FE8816;
+    background-color: #fbefe8;
+}
+.el-select-dropdown__item.selected {
+    color: #FE8816;
+}
