@@ -119,11 +119,14 @@ class EditState extends VuexModule implements IEditState {
 		const cmps = this._components.slice()
 		const activeComponents: any[] = []
 		const chosen = cmps.filter((cmp: any) => cmp.id === id)
+		const templateType = chosen[0].name.replace('cmp-', '')
 
 		if (!!chosen.length) {
 			activeComponents.push(id)
 			if (chosen[0].options.isTemplate) {
 				(TemplateStore as any)[SET_CURRENT_TEMPLATES](chosen[0].options.templateType)
+			} else if (TemplateStore.globalMap.has(templateType)) {
+				(TemplateStore as any)[SET_CURRENT_TEMPLATES](templateType)
 			} else {
 				(TemplateStore as any)[SET_CURRENT_TEMPLATES]()
 			}
