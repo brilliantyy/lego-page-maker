@@ -1,7 +1,7 @@
 <template>
-	<div id="app">
-		<router-view />
-	</div>
+    <div id="app">
+        <router-view />
+    </div>
 </template>
 
 <script>
@@ -12,10 +12,10 @@ export default {}
 @import '@/style/common.scss';
 
 #app {
-	position: absolute;
-	top: 0;
-	left: 0;
-	height: 100%;
-	width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
 }
 </style>

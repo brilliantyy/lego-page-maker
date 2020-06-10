@@ -1,31 +1,10 @@
 <template>
-	<!-- <div @mousedown="toggleEdit" @mouseenter="mouseenter" @mouseleave="mouseleave">
-		<edit-mode v-show="isEdit" :id="id" :css="constyle">
-			<img class="inline_img"
-                :style="style"
-                :src="currentUrl"
-                @mousedown="mousedown"/>
-		</edit-mode>
-		<div class="is-hover"
-			v-show="hoverStatus && !isEdit"
-			:style="constyle">
-			<img class="inline_img"
-                :style="style"
-                :src="options.items[0].url || defaultUrl"
-                @mousedown="mousedown"/>
-		</div>
-		<img class="default-status"
-			v-show="!hoverStatus && !isEdit"
-			:style="style"
-            :src="options.items[0].url || defaultUrl" 
-			ondragstart="return false;"/>
-	</div> -->
 	<div @mousedown="toggleEdit" @mouseenter="mouseenter" @mouseleave="mouseleave">
         <edit-mode v-show="isEdit" :id="id" :css="wrapperStyle">
             <div class="swiper-content">
                 <swiper class="swiper-no-swiping" :options="swiperOptions" @mousedown="mousedown">
                     <swiper-slide v-for="(item, index) in options.items" :key="index" :style="slideStyle">
-						<img :src="item.url" :style="{ 'object-fit': style.objectFit }">
+						<img :src="item.url || defaultUrl" :style="{ 'object-fit': style.objectFit }" ondragstart="return false;">
 					</swiper-slide>
                     <div class="swiper-pagination" slot="pagination"></div>
                 </swiper>
@@ -37,7 +16,7 @@
             <div class="swiper-content">
                 <swiper class="swiper-no-swiping" :options="swiperOptions" @mousedown="mousedown">
                     <swiper-slide v-for="(item, index) in options.items" :key="index" :style="slideStyle">
-						<img :src="item.url" :style="{ 'object-fit': style.objectFit }">
+						<img :src="item.url || defaultUrl" :style="{ 'object-fit': style.objectFit }">
 					</swiper-slide>
                     <div class="swiper-pagination" slot="pagination"></div>
                 </swiper>
@@ -47,7 +26,7 @@
             <div class="swiper-content">
                 <swiper :options="swiperOptions">
                     <swiper-slide v-for="(item, index) in options.items" :key="index" :style="slideStyle">
-						<img :src="item.url" :style="{ 'object-fit': style.objectFit }">
+						<img :src="item.url || defaultUrl" :style="{ 'object-fit': style.objectFit }">
 					</swiper-slide>
                     <div class="swiper-pagination" slot="pagination"></div>
                 </swiper>

@@ -6,7 +6,6 @@ const tmpl = `
     <meta http-equiv=X-UA-Compatible content="IE=edge">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>{{pageData.pageConfig.title}}</title>
-    <link rel="stylesheet" href="http://localhost:3000/stylesheets/common.css">
     <link rel="stylesheet" href="http://localhost:3000/stylesheets/swiper.min.css">
     <link rel="stylesheet" href="http://localhost:3000/javascripts/bundle.css">
     <script src="http://localhost:3000/javascripts/flexible.min.js"></script>
