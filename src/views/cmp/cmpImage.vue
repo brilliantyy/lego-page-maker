@@ -1,7 +1,7 @@
 <template>
 	<div @mousedown="toggleEdit" @mouseenter="mouseenter" @mouseleave="mouseleave">
 		<edit-mode v-show="isEdit" :id="id" :css="constyle">
-			<img class="inline_img"
+			<img class="inline-img"
 				:style="style"
 				:src="options.url || defaultUrl"
 				@mousedown="mousedown"
@@ -10,7 +10,7 @@
 		<div class="is-hover"
 			v-show="hoverStatus && !isEdit"
 			:style="constyle">
-			<img class="inline_img"
+			<img class="inline-img"
 				:style="style"
 				:src="options.url || defaultUrl"
 				@mousedown="mousedown"
@@ -45,5 +45,3 @@ export default class CmpImage extends Vue {
 
 }
 </script>
-
-<style lang="scss" scoped></style>

@@ -207,6 +207,53 @@ export function cmpCarousel(): BaseComponent {
 	}
 }
 
+export function cmpForm(): BaseComponent {
+	return {
+		name: 'cmp-form',
+		id: guid(),
+		options: {
+			items: [
+				{ type: 'input', name: 'name', value: '', placeholder: '请输入您的姓名', inputType: 'text' },
+				{ type: 'input', name: 'phone', value: '', placeholder: '请输入您的手机号码', inputType: 'tel' },
+				{ type: 'button', name: 'submit', value: '提交' }
+			]
+		},
+		css: {
+			top: 0,
+			left: 0,
+			width: 200,
+			height: 30,
+			itemHeight: 30,
+			zIndex: 0,
+			marginBottom: 10,
+			borderColor: 'rgba(0,0,0,0.5)',
+			borderStyle: 'solid',
+			borderWidth: 1,
+			borderRadius: 0,
+		},
+		animation: {
+			animationName: '',
+			animationDuration: 1000,
+			animationDelay: 0,
+			animationIterationCount: 1,
+			animationFillMode: 'both',
+		},
+		properties: [
+			{ name: '对齐方式', key: 'align', type: 'blockAlign' },
+			{ name: '宽度', key: 'width', type: 'number' },
+			{ name: '高度', key: 'height', type: 'number' },
+			{ name: '间距', key: 'marginBottom', type: 'number' },
+			{ name: '圆角', key: 'borderRadius', type: 'number' },
+			{ name: '边框宽度', key: 'borderWidth', type: 'number' },
+			{ name: '边框颜色', key: 'borderColor', type: 'color' },
+			{ name: '层级', key: 'zIndex', type: 'number' },
+		],
+		datas: [
+			{ name: '提交按钮文本', key: 'submit', type: 'input' },
+		]
+	}
+}
+
 export function cmpScroller(): BaseComponent {
 	return {
 		name: 'cmp-scroller',

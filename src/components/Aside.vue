@@ -49,7 +49,7 @@ export default class Menu extends Vue {
 				{ com_id: 'cmpText', com_name: '文本', com_icon: require('@assets/img/png/com_text.png'), com_icon_active: require('@assets/img/png/com_text_active.png') },
 				{ com_id: 'cmpImage', com_name: '图片', com_icon: require('@assets/img/png/com_image.png'), com_icon_active: require('@assets/img/png/com_image_active.png') },
 				{ com_id: 'cmpCarousel', com_name: '轮播图', com_icon: require('@assets/img/png/com_swiper.png'), com_icon_active: require('@assets/img/png/com_swiper_active.png') },
-				{ com_id: 'cmpScroller', com_name: '横向滑动', com_icon: require('@assets/img/png/com_scroller.png'), com_icon_active: require('@assets/img/png/com_scroller_active.png') },
+				{ com_id: 'cmpForm', com_name: '表单', com_icon: require('@assets/img/png/com_form.png'), com_icon_active: require('@assets/img/png/com_form_active.png') },
 				{ com_id: 'cmpModal', com_name: '弹窗', com_icon: require('@assets/img/png/com_modal.png'), com_icon_active: require('@assets/img/png/com_modal_active.png') },
 			],
 		},

@@ -149,7 +149,7 @@ $defaultBoxShadow: 0 0 8px rgba(154, 154, 154, 0.1);
 	& > .el-container {
 		height: 100%;
 		.el-header {
-			z-index: 2;
+			z-index: 3;
 		}
 		.el-container {
 			height: calc(100vh - 60px);

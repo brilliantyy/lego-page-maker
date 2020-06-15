@@ -38,7 +38,7 @@ html, body {
 	}
 }
 
-.inline_div, .inline_paragraph, .inline_textarea, .inline_img {
+.inline-div, .inline-paragraph, .inline-textarea, .inline-img {
 	user-select: none;
 	border-style: none;
 	width: 100%;
@@ -47,11 +47,11 @@ html, body {
 	box-sizing: border-box;
 }
 
-.inline_paragraph {
+.inline-paragraph {
 	word-break: break-all;
 }
 
-.inline_textarea {
+.inline-textarea {
 	padding: 0;
 }
 

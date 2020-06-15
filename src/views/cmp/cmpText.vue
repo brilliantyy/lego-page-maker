@@ -1,12 +1,12 @@
 <template>
 	<div @mousedown="toggleEdit" @mouseenter="mouseenter" @mouseleave="mouseleave">
 		<edit-mode v-show="isEdit" :id="id" :css="constyle">
-			<p class="inline_paragraph"
+			<p class="inline-paragraph"
 				v-show="!isInput"
 				v-html="options.text.replace(/\n|\r\n/g, '<br>')"
 				@dblclick="startEdit"
 				:style="style"></p>
-			<textarea class="inline_textarea"
+			<textarea class="inline-textarea"
 				v-show="isInput"
 				v-model="inputText"
 				:style="style"
@@ -15,7 +15,7 @@
 		<div v-show="hoverStatus && !isEdit"
 			class="is-hover"
 			:style="constyle">
-			<p :style="style" class="inline_paragraph" v-html="options.text.replace(/\n|\r\n/g, '<br>')"></p>
+			<p :style="style" class="inline-paragraph" v-html="options.text.replace(/\n|\r\n/g, '<br>')"></p>
 		</div>
 		<div v-show="!isEdit & !hoverStatus" class="default-status" :style="style">
 			<p v-html="options.text.replace(/\n|\r\n/g, '<br>')"></p>
@@ -51,5 +51,3 @@ export default class CmpText extends Vue {
 	}
 }
 </script>
-
-<style lang="scss" scoped></style>

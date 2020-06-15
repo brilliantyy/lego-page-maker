@@ -1,13 +1,13 @@
 <template>
 	<div @mousedown="toggleEdit" @mouseenter="mouseenter" @mouseleave="mouseleave">
 		<edit-mode v-show="isEdit" :id="id" :css="constyle">
-			<div :style="style" @mousedown="mousedown" class="inline_div"></div>
+			<div :style="style" @mousedown="mousedown" class="inline-div"></div>
 		</edit-mode>
 		<div
 			v-show="hoverStatus && !isEdit"
 			:style="constyle"
 			class="is-hover">
-			<div :style="style" @mousedown="mousedown" class="inline_div"></div>
+			<div :style="style" @mousedown="mousedown" class="inline-div"></div>
 		</div>
 		<div
 			v-show="!hoverStatus && !isEdit"
@@ -35,5 +35,3 @@ export default class CmpDiv extends Vue {
 	
 };
 </script>
-
-<style lang="scss" scoped></style>
