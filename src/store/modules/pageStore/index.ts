@@ -13,6 +13,7 @@ interface IPageState {
     backgroundColor: string
     backgroundImage: string
     backgroundRepeat: string
+    backgroundSize: string
     [key: string]: any
 }
 
@@ -26,6 +27,7 @@ class PageState extends VuexModule implements IPageState {
 	public backgroundColor = '#FFFFFF'
     public backgroundImage = ''
     public backgroundRepeat = 'no-repeat'
+    public backgroundSize = 'none'
 	public pid = ''
     public description = ''
 
@@ -39,6 +41,7 @@ class PageState extends VuexModule implements IPageState {
             backgroundColor: this.backgroundColor,
             backgroundImage: this.backgroundImage,
             backgroundRepeat: this.backgroundRepeat,
+            backgroundSize: this.backgroundSize,
             description: this.description
         }
     }

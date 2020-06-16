@@ -39,7 +39,9 @@ declare global {
 		value?: any
 		min?: number
 		unit?: string
+		attr?: string,
 		options?: Array<any>
+		validator?: RegExp
 	}
 
 	interface styleObj {

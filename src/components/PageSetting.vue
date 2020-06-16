@@ -41,6 +41,15 @@
 					<el-radio-button :checked="false" label="repeat">平铺</el-radio-button>
 				</el-radio-group>
 			</el-form-item>
+			<el-form-item v-show="backgroundImage">
+				<label class="label">适应方式</label>
+				<el-radio-group v-model="backgroundSize" size="small" fill="#fe8816">
+					<el-radio-button :checked="false" label="none">无</el-radio-button>
+					<el-radio-button :checked="false" label="contain">包含</el-radio-button>
+					<el-radio-button :checked="false" label="cover">覆盖</el-radio-button>
+					<el-radio-button :checked="false" label="fill">填充</el-radio-button>
+				</el-radio-group>
+			</el-form-item>
 			<el-form-item>
 				<label class="label">地址</label>
 				<el-input v-model="url" disabled size="small"></el-input>
@@ -104,7 +113,12 @@ export default class PageSetting extends Vue {
 	}
 	set backgroundRepeat(val: string) {
 		(PageStore as any)[UPDATE_SETTINGS]({ backgroundRepeat: val })
-
+	}
+	get backgroundSize() {
+		return PageStore.backgroundSize
+	}
+	set backgroundSize(val: string) {
+		(PageStore as any)[UPDATE_SETTINGS]({ backgroundSize: val })
 	}
 	get url() {
 		return PageStore.url

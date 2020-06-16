@@ -55,6 +55,19 @@ html, body {
 	padding: 0;
 }
 
+.id-tag {
+	width: 60px;
+	height: 16px;
+	bottom: -16px;
+	font-size: 12px;
+    background: rgba(0,0,0,.3);
+    color: #fff;
+    position: absolute;
+    text-align: center;
+    display: block;
+    line-height: 16px;
+}
+
 .empty {
     width: 150px;
     height: 150px;

@@ -1,5 +1,5 @@
 import { guid } from '@/utils/tools'
-import { carouselEffectOptions } from '@/config/index'
+import { carouselEffectOptions, methodOptions } from '@/config/index'
 
 export interface BaseComponent {
 	id: String
@@ -212,11 +212,11 @@ export function cmpForm(): BaseComponent {
 		name: 'cmp-form',
 		id: guid(),
 		options: {
-			items: [
-				{ type: 'input', name: 'name', value: '', placeholder: '请输入您的姓名', inputType: 'text' },
-				{ type: 'input', name: 'phone', value: '', placeholder: '请输入您的手机号码', inputType: 'tel' },
-				{ type: 'button', name: 'submit', value: '提交' }
-			]
+			formItemName: { type: 'input', name: 'name', value: '', placeholder: '请输入您的姓名', inputType: 'text' },
+			formItemPhone: { type: 'input', name: 'phone', value: '', placeholder: '请输入您的手机号码', inputType: 'tel' },
+			formItemSubmit: { type: 'button', name: 'submit', text: '提交' },
+			requestUrl: { value: '' },
+			method: 'POST',
 		},
 		css: {
 			top: 0,
@@ -249,7 +249,9 @@ export function cmpForm(): BaseComponent {
 			{ name: '层级', key: 'zIndex', type: 'number' },
 		],
 		datas: [
-			{ name: '提交按钮文本', key: 'submit', type: 'input' },
+			{ name: '接口地址', key: 'requestUrl', type: 'input', attr: 'value', validator: /^https?:\/\/[\w\-]+(\.[\w\-]+)+([\w\-.,@?^=%&:\/~+#]*[\w\-@?^=%&\/~+#])?$/ },
+			{ name: '提交方式', key: 'method', type: 'select', options: methodOptions },
+			{ name: '提交按钮', key: 'formItemSubmit', type: 'input', attr: 'text' },
 		]
 	}
 }

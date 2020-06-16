@@ -13,6 +13,10 @@ export default class BaseMixin extends Vue {
 
 	private defaultUrl: string = require('@/assets/img/png/image.png')
 
+	get idTag() {
+		return this.id.split('-')[0]
+	}
+
 	get style() {
 		return handleStyle(this.css)
 	}

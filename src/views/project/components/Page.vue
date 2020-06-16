@@ -7,7 +7,8 @@
 			height: `${pageHeight}px`,
 			backgroundColor: backgroundColor,
 			backgroundImage: `url(${backgroundImage})`,
-			backgroundRepeat: backgroundRepeat
+			backgroundRepeat: backgroundRepeat,
+			backgroundSize: backgroundSize
 		}">
 		<template v-if="components.length">
 			<component
@@ -79,6 +80,10 @@ export default class Page extends Vue {
 	
 	get backgroundRepeat() {
 		return PageStore.backgroundRepeat
+	}
+
+	get backgroundSize() {
+		return PageStore.backgroundSize
 	}
 
 	private dragEnter(e: Event) {}

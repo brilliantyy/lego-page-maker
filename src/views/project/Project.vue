@@ -104,7 +104,7 @@ export default class Home extends Vue {
 				const { title, url, content } = res.data
 				try {
 					const { pageConfig, components } = JSON.parse(content)
-					const { renderType } = pageConfig
+					const { renderType, backgroundColor, backgroundImage, backgroundRepeat, backgroundSize } = pageConfig
 					components.forEach((cmp: any) => {
 						if (cmp.options.params) {
 							cmp.options.params = JSON.stringify(cmp.options.params)
@@ -112,7 +112,7 @@ export default class Home extends Vue {
 						const { properties, datas } = models[cmp.name.replace(/-([a-z])/, (r: string) => r.toUpperCase()).replace('-', '')]();
 						(EditStore as any)[ADD_CMP]({ ...cmp, properties, datas })
 					});
-					(PageStore as any)[UPDATE_SETTINGS]({ pid, title, url, renderType })
+					(PageStore as any)[UPDATE_SETTINGS]({ pid, title, url, renderType, backgroundColor, backgroundImage, backgroundRepeat, backgroundSize })
 				} catch (error) {
 					this.$Message.error('数据异常')
 				}

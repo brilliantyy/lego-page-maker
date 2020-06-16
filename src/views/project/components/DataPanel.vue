@@ -24,7 +24,7 @@
 					</el-select>
 				</template>
 				<template v-else-if="prop.type === 'input'">
-					<input type="text" v-model="inputProperty"/>
+					<el-input type="text" v-model="cmpOptions[prop.key][prop.attr]" size="small"></el-input>
 				</template>
 			</el-form-item>
 		</el-form>
@@ -61,14 +61,6 @@ export default class PropertyPanel extends Vue {
 
 	get cmpOptions() {
 		return this.cmp.options
-	}
-
-	get isCmpForm() {
-		return this.cmp.name.indexOf('form') > -1
-	}
-
-	get inputProperty() {
-		// return this.isCmpForm ? this.cmpOptions.items.filter(i => i.name === prop.key)[prop.value]: this.cmpOptions[prop.key]
 	}
 
 	private handleUpdateImage(url: string) {
