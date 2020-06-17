@@ -27,6 +27,23 @@
 					<el-input type="text" v-model="cmpOptions[prop.key][prop.attr]" size="small"></el-input>
 				</template>
 			</el-form-item>
+			<el-form-item v-for="item in formItems" :key="item.key" :label="item.label">
+				<template v-if="item.type === 'input'">
+					<el-input v-model="item.placeholder" :type="item.inputType" placeholder="提示文本" size="small"></el-input>
+					<label>校验规则</label>
+					<el-select v-model="item.validator" size="small">
+						<el-option label="邮箱" value="email"></el-option>
+						<el-option label="手机号码" value="phone"></el-option>
+						<el-option label="身份证号" value="ID"></el-option>
+					</el-select>
+				</template>
+				<template v-if="item.type !== 'button'">
+					<el-checkbox v-model="item.required">必填</el-checkbox>
+				</template>
+				<template v-else>
+					<el-input v-model="item.text" type="text" placeholder="按钮文本" size="small"></el-input>
+				</template>
+			</el-form-item>
 		</el-form>
 		<template v-else>
             <img class="empty" :src="require('@assets/img/png/no_content.png')" alt="无内容">
@@ -63,6 +80,10 @@ export default class PropertyPanel extends Vue {
 		return this.cmp.options
 	}
 
+	get formItems() {
+		return Object.keys(this.cmpOptions).filter(i => i.indexOf('formItem') > -1).map(i => this.cmpOptions[i])
+	}
+
 	private handleUpdateImage(url: string) {
 		console.log(url)
 	}
@@ -70,14 +91,19 @@ export default class PropertyPanel extends Vue {
 }
 </script>
 <style lang="scss" scoped>
-.el-form {
+.el-form-item {
 	::v-deep .el-form-item__content {
-		color: #606266;
-		font-size: 12px;
-		font-weight: 500;
-	}
-	.el-input {
-		width: 400px;
+		& > .el-input--small {
+			width: 150px;
+			margin-right: 10px;
+		}
+		& > .el-select--small {
+			margin-right: 10px;
+		}
+		& > label {
+			margin-right: 8px;
+			color: #606266;
+		}
 	}
 }
 </style>

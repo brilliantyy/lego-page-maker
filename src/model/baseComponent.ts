@@ -212,9 +212,9 @@ export function cmpForm(): BaseComponent {
 		name: 'cmp-form',
 		id: guid(),
 		options: {
-			formItemName: { type: 'input', name: 'name', value: '', placeholder: '请输入您的姓名', inputType: 'text' },
-			formItemPhone: { type: 'input', name: 'phone', value: '', placeholder: '请输入您的手机号码', inputType: 'tel' },
-			formItemSubmit: { type: 'button', name: 'submit', text: '提交' },
+			formItemName: { label: '输入框', type: 'input', key: 'name', value: '', placeholder: '请输入您的姓名', inputType: 'text', validator: '', required: true },
+			formItemPhone: { label: '输入框', type: 'input', key: 'phone', value: '', placeholder: '请输入您的手机号码', inputType: 'tel', validator: 'phone', required: true },
+			formItemSubmit: { label: '按钮', type: 'button', key: 'submit', text: '提交' },
 			requestUrl: { value: '' },
 			method: 'POST',
 		},
@@ -231,13 +231,7 @@ export function cmpForm(): BaseComponent {
 			borderWidth: 1,
 			borderRadius: 0,
 		},
-		animation: {
-			animationName: '',
-			animationDuration: 1000,
-			animationDelay: 0,
-			animationIterationCount: 1,
-			animationFillMode: 'both',
-		},
+		animation: {},
 		properties: [
 			{ name: '对齐方式', key: 'align', type: 'blockAlign' },
 			{ name: '宽度', key: 'width', type: 'number' },
@@ -249,9 +243,8 @@ export function cmpForm(): BaseComponent {
 			{ name: '层级', key: 'zIndex', type: 'number' },
 		],
 		datas: [
-			{ name: '接口地址', key: 'requestUrl', type: 'input', attr: 'value', validator: /^https?:\/\/[\w\-]+(\.[\w\-]+)+([\w\-.,@?^=%&:\/~+#]*[\w\-@?^=%&\/~+#])?$/ },
 			{ name: '提交方式', key: 'method', type: 'select', options: methodOptions },
-			{ name: '提交按钮', key: 'formItemSubmit', type: 'input', attr: 'text' },
+			{ name: '接口地址', key: 'requestUrl', type: 'input', attr: 'value', validator: /^https?:\/\/[\w\-]+(\.[\w\-]+)+([\w\-.,@?^=%&:\/~+#]*[\w\-@?^=%&\/~+#])?$/ },
 		]
 	}
 }
