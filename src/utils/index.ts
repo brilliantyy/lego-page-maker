@@ -97,7 +97,7 @@ export function loadTemplates() {
 }
 
 export function importAllSFC(context: any) {
-	const modules = {}
+	const modules: any = {}
 
 	context.keys().forEach((key: string) => {
 		const module = context(key).default

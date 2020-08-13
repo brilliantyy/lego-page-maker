@@ -6,21 +6,28 @@
 					<image-upload></image-upload>
 				</template>
 				<template v-else-if="prop.type === 'number'">
-					<el-input-number v-model="cmpOptions[prop.key]" controls-position="right" :min="prop.min || 0" size="small"></el-input-number>
+					<el-input-number
+						v-model="cmpOptions[prop.key]"
+						controls-position="right"
+						:min="prop.min || 0"
+						size="small"
+					></el-input-number>
 					{{ prop.unit }}
 				</template>
 				<template v-else-if="prop.type === 'carousel'">
 					<image-upload :isCarousel="true" @update-image="handleUpdateImage"></image-upload>
 				</template>
 				<template v-else-if="prop.type === 'switch'">
-					<el-switch
-						v-model="cmpOptions[prop.key]"
-						active-color="#fbaa5c">
-					</el-switch>
+					<el-switch v-model="cmpOptions[prop.key]" active-color="#fbaa5c"></el-switch>
 				</template>
 				<template v-else-if="prop.type === 'select'">
 					<el-select v-model="cmpOptions[prop.key]" size="small">
-						<el-option v-for="option in prop.options" :key="option.value" :label="option.label" :value="option.value"></el-option>
+						<el-option
+							v-for="option in prop.options"
+							:key="option.value"
+							:label="option.label"
+							:value="option.value"
+						></el-option>
 					</el-select>
 				</template>
 				<template v-else-if="prop.type === 'input'">
@@ -46,8 +53,8 @@
 			</el-form-item>
 		</el-form>
 		<template v-else>
-            <img class="empty" :src="require('@assets/img/png/no_content.png')" alt="无内容">
-        </template>
+			<img class="empty" :src="require('@assets/img/png/no_content.png')" alt="无内容" />
+		</template>
 	</div>
 </template>
 
@@ -81,13 +88,14 @@ export default class PropertyPanel extends Vue {
 	}
 
 	get formItems() {
-		return Object.keys(this.cmpOptions).filter(i => i.indexOf('formItem') > -1).map(i => this.cmpOptions[i])
+		return Object.keys(this.cmpOptions)
+			.filter(i => i.indexOf('formItem') > -1)
+			.map(i => this.cmpOptions[i])
 	}
 
 	private handleUpdateImage(url: string) {
 		console.log(url)
 	}
-
 }
 </script>
 <style lang="scss" scoped>

@@ -1,6 +1,6 @@
 <template>
-    <div class="lego-previewer">
-        <template v-if="components.length">
+	<div class="lego-previewer">
+		<template v-if="components.length">
 			<component
 				v-for="(item, index) in components"
 				:key="index"
@@ -10,13 +10,13 @@
 				:options="item.options"
 				:properties="item.properties"
 				:datas="item.datas"
-				></component>
+			></component>
 		</template>
-    </div>
+	</div>
 </template>
 
-<script lang="ts">	
-import { Vue, Component } from "vue-property-decorator"
+<script lang="ts">
+import { Vue, Component } from 'vue-property-decorator'
 import EditStore from '@/store/modules/editStore'
 import PageStore from '@/store/modules/setting'
 import TYPES from '@/store/modules/editStore/types'
@@ -28,11 +28,9 @@ import CmpScroller from '@/views/cmp/cmpScroller.vue'
 import AsyncLoadComponentMixin from './asyncLoadComponent'
 
 @Component({
-    mixins: [AsyncLoadComponentMixin]
+	mixins: [AsyncLoadComponentMixin]
 })
-export default class Preview extends Vue {	
-
-
+export default class Preview extends Vue {
 	get components() {
 		return EditStore.components
 	}
@@ -40,5 +38,4 @@ export default class Preview extends Vue {
 </script>
 
 <style lang="scss" scoped>
-
 </style>

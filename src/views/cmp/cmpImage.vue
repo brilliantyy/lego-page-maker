@@ -25,7 +25,7 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue, Prop } from 'vue-property-decorator'
+import { Component, Vue, Prop, Mixins } from 'vue-property-decorator'
 import { handleStyle } from '@/utils/index'
 import EditMode from '@/components/editMode/index.vue'
 import EditStore from '@/store/modules/editStore'
@@ -35,13 +35,11 @@ import BaseMixin from './baseMixin'
 @Component({
 	components: {
 		EditMode
-	},
-	mixins: [BaseMixin]
+	}
 })
-export default class CmpImage extends Vue {
+export default class CmpImage extends Mixins(BaseMixin) {
 	private loadImg(e: Event) {
 		console.log(e)
-	}   
-
+	}
 }
 </script>

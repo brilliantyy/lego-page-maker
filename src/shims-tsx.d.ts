@@ -21,6 +21,10 @@ declare global {
 		backgroundImage: string
 	}
 
+	interface Options {
+		[index: string]: any
+	}
+
 	interface PropertyItem {
 		type: string
 		name: string

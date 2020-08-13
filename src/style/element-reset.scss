@@ -52,9 +52,7 @@
     .el-input-number--small, .el-select--small {
         width: 100px;
     }
-    .el-form-item__content > .el-input--small {
-        width: 300px;
-    }
+
     .el-input-number__decrease:hover, .el-input-number__increase:hover, .el-radio__input.is-checked+.el-radio__label,
     .el-checkbox__input.is-checked+.el-checkbox__label {
 		color: #FE8816;
@@ -80,16 +78,16 @@
 	border-color: #FE8816;
 }
 .el-input.is-disabled .el-input__inner {
-    background: #FFFFFF;
-    border-color: #DCDFE6;
-    color: #606266;
-    cursor: default;
+	background: #FFFFFF;
+	border-color: #DCDFE6;
+	color: #606266;
+	cursor: default;
 }
 .el-button:focus, .el-button:hover {
-    color: #FE8816;
-    border-color: #FE8816;
-    background-color: #fbefe8;
+	color: #FE8816;
+	border-color: #FE8816;
+	background-color: #fbefe8;
 }
 .el-select-dropdown__item.selected {
-    color: #FE8816;
+	color: #FE8816;
 }

@@ -3,33 +3,33 @@ import { BaseComponent } from '@/model/baseComponent'
 import { carouselApiOptions, carouselEffectOptions } from '@/config/index'
 
 export function carouselNormal(): BaseComponent {
-    return {
-        name: 'carousel-normal',
-        id: guid(),
+	return {
+		name: 'carousel-normal',
+		id: guid(),
 		options: {
-            isTemplate: true,
-            templateType: 'carousel',
+			isTemplate: true,
+			templateType: 'carousel',
 			items: [{ url: '', link: '' }],
 			api: 0,
 			nums: 1,
 			autoplay: true,
 			speed: 300,
 			delay: 1000,
-			effect: 'slide'			
+			effect: 'slide'
 		},
 		css: {
 			top: 0,
 			left: 0,
 			width: 375,
-            height: 140,
-            paddingTop: 0,
-            paddingLeft: 0,
-            paddingBottom: 0,
-            paddingRight: 0,
-            marginTop: 0,
-            marginLeft: 0,
-            marginBottom: 0,
-            marginRight: 0,
+			height: 140,
+			paddingTop: 0,
+			paddingLeft: 0,
+			paddingBottom: 0,
+			paddingRight: 0,
+			marginTop: 0,
+			marginLeft: 0,
+			marginBottom: 0,
+			marginRight: 0,
 			zIndex: 0,
 			backgroundColor: '#eeeeee',
 			borderColor: '#000000',
@@ -50,32 +50,36 @@ export function carouselNormal(): BaseComponent {
 			{ name: '边框颜色', key: 'borderColor', type: 'color' },
 			{ name: '背景色', key: 'backgroundColor', type: 'color' },
 			{ name: '适应方式', key: 'objectFit', type: 'objectFit' },
-			{ name: '层级', key: 'zIndex', type: 'number' },
+			{ name: '层级', key: 'zIndex', type: 'number' }
 		],
 		datas: [
-            { name: '数目', key: 'nums', type: 'number', min: 1 },
+			{ name: '数目', key: 'nums', type: 'number', min: 1 },
 			{ name: '数据源', key: 'api', type: 'select', options: carouselApiOptions },
 			{ name: '切换效果', key: 'effect', type: 'select', options: carouselEffectOptions },
 			{ name: '自动切换', key: 'autoplay', type: 'switch' },
 			{ name: '切换时间', key: 'speed', type: 'number', min: 1, unit: '（毫秒）' },
-			{ name: '间隔时间', key: 'delay', type: 'number', min: 1000, unit: '（毫秒）' },
+			{ name: '间隔时间', key: 'delay', type: 'number', min: 1000, unit: '（毫秒）' }
 		]
-    }
+	}
 }
 
 export function carouselRotate(): BaseComponent {
-    return {
-        name: 'carousel-rotate',
-        id: guid(),
+	return {
+		name: 'carousel-rotate',
+		id: guid(),
 		options: {
-            isTemplate: true,
-            templateType: 'carousel',
-			items: [{ url: '', link: '' }, { url: '', link: '' }, { url: '', link: '' }],
+			isTemplate: true,
+			templateType: 'carousel',
+			items: [
+				{ url: '', link: '' },
+				{ url: '', link: '' },
+				{ url: '', link: '' }
+			],
 			api: 0,
 			nums: 3,
 			autoplay: true,
 			speed: 300,
-			delay: 1000,
+			delay: 1000
 		},
 		css: {
 			top: 0,
@@ -83,14 +87,14 @@ export function carouselRotate(): BaseComponent {
 			width: 375,
 			height: 140,
 			slideWidth: 240,
-            paddingTop: 0,
-            paddingLeft: 0,
-            paddingBottom: 0,
-            paddingRight: 0,
-            marginTop: 0,
-            marginLeft: 0,
-            marginBottom: 0,
-            marginRight: 0,
+			paddingTop: 0,
+			paddingLeft: 0,
+			paddingBottom: 0,
+			paddingRight: 0,
+			marginTop: 0,
+			marginLeft: 0,
+			marginBottom: 0,
+			marginRight: 0,
 			zIndex: 0,
 			backgroundColor: '#eeeeee',
 			borderColor: '#000000',
@@ -111,14 +115,14 @@ export function carouselRotate(): BaseComponent {
 			{ name: '边框颜色', key: 'borderColor', type: 'color' },
 			{ name: '背景色', key: 'backgroundColor', type: 'color' },
 			{ name: '适应方式', key: 'objectFit', type: 'objectFit' },
-			{ name: '层级', key: 'zIndex', type: 'number' },
+			{ name: '层级', key: 'zIndex', type: 'number' }
 		],
 		datas: [
-            { name: '数目', key: 'nums', type: 'number', min: 3 },
+			{ name: '数目', key: 'nums', type: 'number', min: 3 },
 			{ name: '数据源', key: 'api', type: 'select', options: carouselApiOptions },
 			{ name: '自动切换', key: 'autoplay', type: 'switch' },
 			{ name: '切换时间', key: 'speed', type: 'number', min: 1, unit: '（毫秒）' },
-			{ name: '间隔时间', key: 'delay', type: 'number', min: 1000, unit: '（毫秒）' },
+			{ name: '间隔时间', key: 'delay', type: 'number', min: 1000, unit: '（毫秒）' }
 		]
-    }
+	}
 }

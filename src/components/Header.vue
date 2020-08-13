@@ -31,9 +31,9 @@ import { Component, Prop, Vue } from 'vue-property-decorator'
 import EditStore from '@/store/modules/editStore'
 import PageStore from '@/store/modules/pageStore'
 import TYPES from '@/store/modules/editStore/types'
-import { UPDATE_SETTINGS } from '@/store/modules/pageStore/types'
-import { undo, redo } from '@/store/plugins/operatePlugin'
 import history from '@/store/plugins/operatePlugin/history'
+import { undo, redo } from '@/store/plugins/operatePlugin'
+import { UPDATE_SETTINGS } from '@/store/modules/pageStore/types'
 
 @Component
 export default class Header extends Vue {
@@ -85,7 +85,7 @@ export default class Header extends Vue {
 	}
 
 	private handleMouseClick(e: Event) {
-		if (e.target.classList.contains('preview-btn')) return
+		if ((e.target as any).classList.contains('preview-btn')) return
 		this.showCode = false
 	}
 

@@ -7,11 +7,11 @@ import TYPES from '@/store/modules/editStore/types'
 export default class BaseMixin extends Vue {
 	@Prop({ default: '' }) id!: string
 	@Prop({ default: () => {} }) css!: object
-	@Prop({ default: () => {} }) options!: object
+	@Prop({ default: () => {} }) options!: Options
 	@Prop({ default: () => [] }) properties!: PropertyItem[]
 	@Prop({ default: () => [] }) datas!: DataItem[]
 
-	private defaultUrl: string = require('@/assets/img/png/image.png')
+	defaultUrl: string = require('@/assets/img/png/image.png')
 
 	get idTag() {
 		return this.id.split('-')[0]

@@ -31,6 +31,7 @@ class EditState extends VuexModule implements IEditState {
 	private _properties = [] as any[]
 	private _datas = [] as any[]
 	private _historyIndex = 0
+	private _templates: string[] = []
 
 	get components() {
 		return this._components
@@ -292,7 +293,7 @@ class EditState extends VuexModule implements IEditState {
 
 	@Action({ rawError: true })
 	[TYPES.UPDATE_MOUSE_DOWN](status: boolean) {
-		;(this as any)[TYPES.SET_MOUSE_DOWN](status)
+		(this as any)[TYPES.SET_MOUSE_DOWN](status)
 
 		if (status) {
 			// commit(TYPES.UPDATE_ANCHOR_POS)

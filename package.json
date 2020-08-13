@@ -9,7 +9,6 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
-    "@types/qs": "^6.9.2",
     "core-js": "^2.6.5",
     "element-ui": "^2.13.1",
     "lodash": "^4.17.15",
@@ -31,6 +30,8 @@
     "@types/chai": "^4.1.0",
     "@types/lodash": "^4.14.150",
     "@types/mocha": "^5.2.4",
+    "@types/qs": "^6.9.2",
+    "@types/swiper": "^5.4.0",
     "@types/vuedraggable": "^2.23.0",
     "@vue/cli-plugin-babel": "^3.12.0",
     "@vue/cli-plugin-eslint": "^3.12.0",
@@ -43,6 +44,7 @@
     "babel-eslint": "^10.0.1",
     "chai": "^4.1.2",
     "eslint": "^5.16.0",
+    "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-vue": "^5.0.0",
     "node-sass": "^4.12.0",

@@ -8,7 +8,7 @@ export interface BaseComponent {
     properties: PropertyItem[]
 	animation?: Object
 	datas?: DataItem[]
-	options?: Object
+	options?: Options
 	activeIndex?: number
 }
 

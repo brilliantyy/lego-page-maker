@@ -14,5 +14,3 @@ declare module 'vue/types/vue' {
     $Confirm: typeof Message
   }
 }
-
-declare module 'vuedraggable'

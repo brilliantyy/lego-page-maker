@@ -25,10 +25,11 @@
 
 <script lang="ts">	
 import { Vue, Component } from "vue-property-decorator"
-import draggable from "vuedraggable"
 import TemplateStore from '@/store/modules/templateStore'
 import { SET_CURRENT_TEMPLATES } from '@/store/modules/templateStore/types'
 import PageSetting from './PageSetting.vue'
+
+const draggable = require('vuedraggable')
 
 @Component({
 	components: { 

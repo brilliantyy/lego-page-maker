@@ -34,12 +34,12 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
-import Draggable from 'vuedraggable'
 import EditStore from '@/store/modules/editStore'
 import PageStore from '@/store/modules/pageStore'
 import TYPES from '@/store/modules/editStore/types'
 import { initMouseEvent, destroyMouseEvent, importAllSFC, importAllModel } from "@/utils/index"
 
+const Draggable = require('vuedraggable')
 const CmpModules = importAllSFC(require.context('../../cmp', false, /\.vue$/))
 const TemplateModules = importAllSFC(require.context('../../templates', true, /\.vue$/))
 const models: any = importAllModel(require.context('../../../model', true, /\.ts$/))
@@ -156,6 +156,8 @@ export default class Page extends Vue {
 			border-color: #999;
 		}
 	}
-	
+	.el-form-item__content > .el-input--small {
+		width: 300px;
+	}
 }
 </style>
